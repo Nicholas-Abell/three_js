@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Canvas from './canvas/index';
+import Customizer from './pages/Customizer';
+import Home from './pages/Home';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-
-    </>
+    <main className='transition-all ease-in'>
+      <h1 className='text-4xl'>ThreeJS</h1>
+      <Home />
+      <Canvas />
+      <Customizer />
+    </main>
   )
 }
 
