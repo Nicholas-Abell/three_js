@@ -1,8 +1,24 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { Environment, Center } from "@react-three/drei";
 
-type indexProps = {};
+import Shirt from "./Shirt";
+import Backdrop from "./Backdrop";
+import CameraRig from "./CameraRig";
 
-const index: React.FC<indexProps> = () => {
-  return <div>Canvas</div>;
+type canvasProps = {};
+
+const CanvasModal: React.FC<canvasProps> = () => {
+  return (
+    <Canvas>
+      <ambientLight intensity={0.5} /> <Environment preset="city" />
+      <CameraRig>
+        <Backdrop />
+        <Center>
+          <Shirt />
+        </Center>
+      </CameraRig>
+    </Canvas>
+  );
 };
-export default index;
+export default CanvasModal;
